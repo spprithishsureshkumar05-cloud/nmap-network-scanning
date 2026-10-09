@@ -1,0 +1,69 @@
+NMAP SCAN RESULTS
+=================
+
+Target IP: 172.20.77.112
+Date: 08-10-2026
+
+1. BASIC NETWORK SCAN
+---------------------
+Command:
+nmap 172.20.77.112
+
+Result:
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+
+997 TCP ports were reported as closed.
+
+
+2. SERVICE VERSION SCAN
+-----------------------
+Command:
+nmap -sV 172.20.77.112
+
+Result:
+135/tcp  open  msrpc          Microsoft Windows RPC
+139/tcp  open  netbios-ssn    Microsoft Windows netbios-ssn
+445/tcp  open  microsoft-ds
+
+Service Info:
+OS: Windows
+
+
+3. OS DETECTION SCAN
+--------------------
+Command:
+nmap -O 172.20.77.112
+
+Result:
+No exact OS match was identified.
+Nmap generated a TCP/IP fingerprint.
+The scan identified the host as a Windows-based system.
+
+
+4. SECURITY ANALYSIS
+--------------------
+Port 135:
+Microsoft Windows RPC service. It is used for Windows
+remote communication. Unnecessary exposure can increase
+the attack surface.
+
+Port 139:
+NetBIOS session service. It is associated with Windows
+network communication and file/printer sharing.
+
+Port 445:
+Microsoft-DS / SMB-related service. SMB is used for
+Windows file and printer sharing. It should be properly
+secured and kept patched.
+
+
+5. CONCLUSION
+-------------
+The scan identified three open TCP ports on the local
+Windows machine: 135, 139 and 445.
+
+The scan was performed only against the local machine
+owned by the user for educational and security-analysis
+purposes.
